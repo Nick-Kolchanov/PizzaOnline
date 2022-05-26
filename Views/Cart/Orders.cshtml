@@ -1,0 +1,20 @@
+﻿@model  List<OrderPizzas>
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h1>Заказы:</h1>
+<ul>
+    @foreach (var order in Model)
+    {
+        <li>
+            @($"Номер заказа = {order.OrderId}, Дата заказа = {order.Order.CreatedDate}, Название пиццы = {order.Pizza.Name}, Количество = {order.Amount}")
+        </li>
+    }
+</ul>
+
+<p align="center" class="actionButtons">
+    <a href="~/Cart/Index">Назад</a>
+</p>
+
+
